@@ -31,7 +31,7 @@ def simple_pipeline():
     jpegs, labels = fn.readers.file(file_root=image_dir)
     images = fn.decoders.image(jpegs, device='mixed')
 
-    width = 600
+    width = 200
     height = 200
 
     images = fn.resize(images, size=[height, width], mode="not_larger")
