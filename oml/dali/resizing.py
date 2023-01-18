@@ -29,7 +29,7 @@ def show_images(image_batch):
 @pipeline_def
 def simple_pipeline():
     jpegs, labels = fn.readers.file(file_root=image_dir)
-    images = fn.decoders.image(jpegs, device='mixed')
+    images = fn.decoders.image(jpegs, device='cpu')
 
     width = 200
     height = 200
