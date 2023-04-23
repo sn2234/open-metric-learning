@@ -116,7 +116,7 @@ def get_available_triplets(labels: TLabels, max_out_triplets: int = maxsize, dev
 
     # Choose randomly the required number of triplets.
     random_idx = np.random.choice(len(idx_anch), min(len(idx_anch), max_out_triplets), replace=False)
-    random_idx = torch.tensor(random_idx).to(device)
+    random_idx = torch.tensor(random_idx, dtype=torch.long).to(device)
     idx_anch = idx_anch[random_idx]
     idx_pos = idx_pos[random_idx]
     idx_neg = idx_neg[random_idx]
